@@ -6,7 +6,7 @@
     <div class="col-md-6">
       <div *ngFor='let goal of goals;let i = index'>
         <div>
-          <h4 id={{i}} appStrikethrough>{{goal.name}} due on {{goal.completionDate|date|uppercase}}</h4>
+          <h4 id={{i}} appStrikethrough>{{goal.name}} due on {{goal.completeDate|date|uppercase}}</h4>
           <button (click)='toggleDetails(i)' class="btn btn-primary">Toggle Details</button>
         </div>
 
@@ -16,13 +16,8 @@
       </div>
     </div>
     <div class="col-md-6">
-      <p>
-        Quality education is at the heart of African Promise; equipping schools with the infrastructure and resources they need to give children the best start in life.
-      </p>
-      <p>Education is vital in allowing children to escape poverty, build better lives and become the guardians of a more tolerant and peaceful society.</p>
-      <img src="../../assets/images/Sustainable_Development_Goal_1.png" alt="" width="100%">
+      <app-goal-form (addGoal)="addNewGoal($event)"></app-goal-form>
     </div>
   </div>
-
   <p *ngIf='goals.length > 5'>You have too many goals</p>
 </div>
