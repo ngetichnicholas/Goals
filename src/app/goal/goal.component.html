@@ -1,5 +1,6 @@
 <div class="container">
-  <h1>My Goals</h1>
+  <ng-progress></ng-progress>
+  <h1>MY GOALS</h1>
   <hr>
 
   <div class="row">
@@ -20,4 +21,10 @@
     </div>
   </div>
   <p *ngIf='goals.length > 5'>You have too many goals</p>
+  <div class="row">
+    <blockquote class="blockquote text-center">
+      <p class="mb-0">{{goal.author}}</p>
+      <footer class="blockquote-footer"><cite>{{goal.quote}}</cite></footer>
+    </blockquote>
+  </div>
 </div>
